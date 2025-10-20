@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
-public class BusquedaPorNombre extends Busqueda{
+public class BusquedaPorFraseEnNombre extends Busqueda{
     private String Titulo;
-    public BusquedaPorNombre (String titulo){
+    public BusquedaPorFraseEnNombre (String titulo){
         this.Titulo=titulo;
     }
 
@@ -16,19 +16,19 @@ public class BusquedaPorNombre extends Busqueda{
 
     @Override
     public boolean criterio(Documento documento) {
-        if (documento.getTitulo().equals(Titulo)){
+        if (documento.getTitulo().contains(Titulo)){
             return true;
         }else {
             return false;
         }
     }
     public ArrayList<Documento> filtrar (ArrayList<Documento> documentos){
-     ArrayList<Documento> resultado = new ArrayList<>();
-     for (Documento d : documentos){
-       if (criterio(d)){
-           resultado.add(d);
-       }
-     }
-     return resultado;
+        ArrayList<Documento> resultado = new ArrayList<>();
+        for (Documento d : documentos){
+            if (criterio(d)){
+                resultado.add(d);
+            }
+        }
+        return resultado;
     }
 }

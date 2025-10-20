@@ -16,7 +16,12 @@ public class Documento {
     public String toString() {
         return super.toString();
     }
-
+    public void anadirAutor (String autor){
+        listaDeAutores.add(autor);
+    }
+    public void anadirPalabraClave (String nuevaPalabraClave) {
+        palabrasClave.add(nuevaPalabraClave);
+    }
     public String getTitulo() {
         return titulo;
     }
